@@ -16,7 +16,11 @@ def model_def(model_path,no_gpus):
                 gpu_memory_utilization = 0.97,
                 enforce_eager=True,
                 enable_chunked_prefill=True,
-                download_dir=model_path,)
+                download_dir=model_path,
+                ###for deepseek AWQ add
+                #max_num_batched_tokens=6000, 
+                #trust_remote_code=True,
+               )
 
     sampling_params = SamplingParams(temperature=0.6,top_p=0.9,max_tokens=2500) 
 
